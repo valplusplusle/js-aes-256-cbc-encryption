@@ -3,13 +3,13 @@ This is a simple tool to encrypt data. It was build to be used with node. It cry
 
 
 # requirements
-If not installed oyu need fs and crypto:
+If not installed - you need fs and crypto:
 
 require('fs');
 
 require('crypto');
 
-Needs something to start a .js. (Build to be used with Node.js)
+Needs something to start a ".js" file. (Build to be used with Node.js)
 
 
 # usage
