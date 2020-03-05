@@ -12,9 +12,6 @@ cryptTar(argumentArray[2], argumentArray[3], argumentArray[4])
 function cryptTar(pathToFile, pathToSave, key) {   
     var cipher = crypto.createDecipheriv('aes-256-cbc', key);
     var input = fs.createReadStream(pathToFile);
-    if (!fs.existsSync(pathToSaveTar)){
-      fs.mkdirSync(pathToSaveTar);
-    }
     var output = fs.createWriteStream(pathToSave);
     input.pipe(cipher).pipe(output);
   
