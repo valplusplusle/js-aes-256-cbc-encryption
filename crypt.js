@@ -1,6 +1,3 @@
-var fs = require('fs');
-var crypto = require('crypto');
-
 var argumentArray = [];
 
 process.argv.forEach((val, index) => {
@@ -9,10 +6,14 @@ process.argv.forEach((val, index) => {
 
 cryptTar(argumentArray[2], argumentArray[3], argumentArray[4])
 
-function cryptTar(pathToFile, pathToSave, key) {   
-    var cipher = crypto.createDecipheriv('aes-256-cbc', key);
+function cryptTar(pathToFile, pathToSaveTar, key) {
+    var fs = require('fs');
+    var crypto = require('crypto');
+
+    var cipher = crypto.createCipher('aes-256-cbc', key);
     var input = fs.createReadStream(pathToFile);
-    var output = fs.createWriteStream(pathToSave);
+    var outputFile = pathToSaveTar;
+    var output = fs.createWriteStream(outputFile);
     input.pipe(cipher).pipe(output);
   
     output.on('finish', function() {
