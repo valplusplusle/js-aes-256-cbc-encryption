@@ -1,6 +1,6 @@
 # js-aes-256-cbc-encryption
 This is a simple tool to encrypt data. It was build to be used with node. It crypts with aes-256-cbc
-
+For security reasons this is deprecated!
 
 # requirements
 If not installed - you need fs and crypto:
